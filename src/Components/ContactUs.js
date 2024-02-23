@@ -7,9 +7,12 @@ import toast from 'react-hot-toast';
 function ContactUs() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true); // Show loader when submit button is clicked
+
     const options = {
       method: "POST",
       headers: {
@@ -20,18 +23,20 @@ function ContactUs() {
         message
       })
     };
-    await fetch("https://my-portfolio-1f763-default-rtdb.firebaseio.com/UserData.json", options)
-      .then(response => {
-        if (response.ok) {
-          toast.success("Message sent successfully")
-        } else {
-          toast.error("Error occurred while sending message")
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
+
+    try {
+      const response = await fetch("https://my-portfolio-1f763-default-rtdb.firebaseio.com/UserData.json", options);
+      if (response.ok) {
+        toast.success("Message sent successfully");
+      } else {
         toast.error("Error occurred while sending message");
-      });
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      toast.error("Error occurred while sending message");
+    } finally {
+      setIsLoading(false); // Hide loader after the operation is complete
+    }
   };
 
   return (
@@ -66,11 +71,16 @@ function ContactUs() {
             <button
               className='transition-all ease-in-out hover:scale-110 bg-purple-500 flex flex-row items-center justify-center text-[14px]  py-1 mt-5 text-white  rounded-md'
               onClick={handleSubmit}
+              disabled={isLoading} // Disable the button when loading
             >
-              Submit
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="ml-2 w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-              </svg>
+              {isLoading ? ( // Show loader if isLoading is true
+                <svg className="animate-spin h-5 w-5 mr-3 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647zM20 12a8 8 0 01-8 8v4c6.627 0 12-5.373 12-12h-4zm-2-7.938A7.96 7.96 0 0120 12h4c0-3.042-1.135-5.824-3-7.938l-3 2.647z"></path>
+                </svg>
+              ) : (
+                "Submit"
+              )}
             </button>
           </div>
         </div>
