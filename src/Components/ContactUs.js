@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { contactusbg, phone } from '../assets';
 import { AppText } from '../Constants';
 import SectionHeading from '../Shared/SectionHeading';
+import toast from 'react-hot-toast';
 
 function ContactUs() {
   const [email, setEmail] = useState('');
@@ -22,14 +23,14 @@ function ContactUs() {
     await fetch("https://my-portfolio-1f763-default-rtdb.firebaseio.com/UserData.json", options)
       .then(response => {
         if (response.ok) {
-          alert("Message sent successfully");
+          toast.success("Message sent successfully")
         } else {
-          alert("Error occurred while sending message");
+          toast.error("Error occurred while sending message")
         }
       })
       .catch(error => {
         console.error('Error:', error);
-        alert("Error occurred while sending message");
+        toast.error("Error occurred while sending message");
       });
   };
 

@@ -1,33 +1,34 @@
 
 import './App.css';
-import {NavBar,Home, Portfolio} from './Components';
+import { NavBar, Home, Portfolio } from './Components';
 import AboutMe from './Components/AboutMe';
 import Companies from './Components/Companies';
 import ContactUs from './Components/ContactUs';
 import Footer from './Components/Footer';
 import Skills from './Components/Skills';
-
+import { Toaster } from "react-hot-toast"
 
 function App() {
   return (
     <div className="App">
+      <Toaster />
       {/* NavBar */}
-      <NavBar/>
+      <NavBar />
       {/* Home */}
-      <Home/>
+      <Home />
       {/* About Me */}
-      <AboutMe/>
+      <AboutMe />
       {/* Skills */}
-      <Skills/>
+      <Skills />
       {/* Portfolio */}
-      <Portfolio/>
+      <Portfolio />
 
       {/* Companies */}
-      <Companies/>
+      <Companies />
       {/* Contact Us */}
-      <ContactUs/>
+      <ContactUs />
 
-      <Footer/>
+      <Footer />
     </div>
   );
 }
