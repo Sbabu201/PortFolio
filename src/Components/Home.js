@@ -12,8 +12,8 @@ const Home = () => {
       <div className='flex w-full flex-row  justify-end'>
         <div className='flex w-full flex-col  items-start content-end'>
           <h1 className='text-[35px] md:text-[40px] font-bold '>{AppText.hello}</h1>
-          <div className='flex'>
-            <h1 className='text-[35px]  md:text-[40px] font-bold mr-3'>{AppText.Iam}</h1>
+          <div className='flex flex-wrap'>
+            <h1 className='text-[25px]   md:text-[40px] font-bold mr-3'>{AppText.Iam}</h1>
             {/* <h1 className='text-[40px]  md:text-[60px] font-bold  text-purple-600'>{AppText.RahulSanap}</h1> */}
             <Typewriter
               options={{
