@@ -8,7 +8,7 @@ import Typewriter from 'typewriter-effect';
 import resume from "./../assets/resume.pdf"
 const Home = () => {
   return (
-    <div id='home' className='flex p-[20px] md:px-20 justify-between font-times flex-col md:flex-row'>
+    <div id='home' className='flex p-[20px] md:px-20 justify-between  font-times flex-col md:flex-row'>
       <div className='flex w-full flex-row  justify-end'>
         <div className='flex w-full flex-col  items-start content-end'>
           <h1 className='text-[35px] md:text-[40px] font-bold '>{AppText.hello}</h1>

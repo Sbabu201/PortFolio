@@ -3,7 +3,7 @@ import "./NavBar.css";
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
   return (
-    <div className="w-full p-[10px] flex fixed z-10 h-20 justify-end items-center">
+    <div className="w-full p-[10px] flex fixed bg-white shadow-md z-10 h-20 justify-end items-center">
       <div>
         <ul className="hidden font-bold font-times md:flex">
           <li className="menuItem hover:scale-110 hover:z-50 transition-all duration-300 ease-in-out">
