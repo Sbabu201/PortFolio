@@ -40,10 +40,9 @@ const Portfolio = () => {
             active:bg-purple-500 p-1 px-4 rounded-md
             focus:ring-violet-300 focus:bg-purple-600 focus:ring '>Mobile App</button>
             </div>
-            <div className='grid grid-cols-1 items-center content-center md:grid-cols-3 lg:grid-cols-3
-        md:px-24 lg:px-48  '>
+            <div className=' flex md:flex-row flex-col flex-wrap items-center gap-3 justify-center  '>
                 {portfolioList.map((item, index) => {
-                    console.log('item', item)
+
                     return (
                         <Card imageSrc={item.imageUrl} title={item?.title} description={item?.desc} link={item?.website} detailedDescription={item?.detailedDescription} />
                     )

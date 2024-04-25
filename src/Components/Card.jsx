@@ -19,7 +19,7 @@ const Card = ({ imageSrc, title, description, link, detailedDescription }) => {
 
     return (
         <div
-            className={`not-selectable w-[320px] relative rounded-[10px] overflow-hidden shadow-xl border border-gray-300 m-4 border-1  bg-gray-100  text-black hover:border-2 hover:border-purple-600 hover:scale-110 transition-transform duration-300 hover:text-purple-400 ${isFlipped ? "rotate-back" : ""
+            className={`not-selectable w-[320px] relative rounded-[10px] overflow-hidden shadow-xl border border-gray-300 md:m-4 border-1  bg-gray-100  text-black hover:border-2 hover:border-purple-600 hover:scale-110 transition-transform duration-300 hover:text-purple-400 ${isFlipped ? "rotate-back" : ""
                 }`}
             onClick={handleClick}
         >
