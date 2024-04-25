@@ -7,14 +7,14 @@ const AboutMe = () => {
   return (
     <div id="aboutme" className='mt-[100px]  font-times'>
       <img src={wave} alt='wave' className="w-screen absolute " />
-      <div className='w-full bg-purple-600 h-[300px]  justify-center items-center'>
+      <div className='w-full bg-purple-600 h-fit md:h-[300px]  justify-center items-center'>
         <div className='flex flex-row justify-between absolute'>
           <img src={laptop} alt='laptop' className="w-[150px] md:w-[300px] mt-[-100px] " />
         </div>
-        <h1 className='text-white text-[50px] pt-[20px] font-bold text-center'>About <span className='text-black'>Me</span></h1>
-        <h1 className='w-full px-10 md:px-48 lg:px-80 mt-[50px] text-white'>{AppText.aboutMeDescripion} </h1>
+        <h1 className='text-white text-[50px] pt-[20px] font-bold text-center'>About</h1>
+        <h1 className='w-full px-10 md:px-48 lg:px-80 mt-[50px]  text-white'>{AppText.aboutMeDescripion} </h1>
       </div>
-      <div className='flex flex-col justify-between md:flex-row mt-[-10px] md:px-40    '>
+      <div className='flex flex-col justify-between md:flex-row mt-[10px] md:px-40    '>
         {
           aboutSection.map((item, index) => (
 

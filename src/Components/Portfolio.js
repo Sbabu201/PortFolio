@@ -40,7 +40,7 @@ const Portfolio = () => {
             active:bg-purple-500 p-1 px-4 rounded-md
             focus:ring-violet-300 focus:bg-purple-600 focus:ring '>Mobile App</button>
             </div>
-            <div className=' flex md:flex-row flex-col flex-wrap items-center gap-3 justify-center  '>
+            <div className=' flex md:flex-row flex-col flex-wrap items-center mt-8 gap-3 justify-center  '>
                 {portfolioList.map((item, index) => {
 
                     return (
