@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { AppText, portfolio } from '../Constants'
 import SectionHeading from '../Shared/SectionHeading';
 import { robo } from './../assets/index'
+import Card from './Card';
+
 const Portfolio = () => {
 
     const [portfolioList, setPortfolioList] = useState([]);
@@ -39,16 +41,13 @@ const Portfolio = () => {
             focus:ring-violet-300 focus:bg-purple-600 focus:ring '>Mobile App</button>
             </div>
             <div className='grid grid-cols-1 items-center content-center md:grid-cols-3 lg:grid-cols-3
-        md:px-24 lg:px-48 p-4 '>
-                {portfolioList.map((item, index) => (
-                    <div key={index} className='p-2 flex flex-col m-2 rounded-lg bg-purple-100
-                transition-all ease-in-out group hover:scale-110'>
-                        <img src={item.imageUrl} alt='' className="h-[180px] object-cover rounded-lg" />
-                        <h1 className='text-[14px] group-hover:scale-110 mt-2 text-center  font-bold'>{item.title}</h1>
-                        <h1 className='text-[12px] text-gray-500 px-6 pb-3'>{item.desc}</h1>
-
-                    </div>
-                ))}
+        md:px-24 lg:px-48  '>
+                {portfolioList.map((item, index) => {
+                    console.log('item', item)
+                    return (
+                        <Card imageSrc={item.imageUrl} title={item?.title} description={item?.desc} link={item?.website} detailedDescription={item?.detailedDescription} />
+                    )
+                })}
             </div>
         </div>
     )

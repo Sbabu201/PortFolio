@@ -10,7 +10,7 @@ import { Toaster } from "react-hot-toast"
 
 function App() {
   return (
-    <div className="App ">
+    <div className="App custom-scrollbar overflow-y-auto  ">
       <Toaster />
       {/* NavBar */}
       <NavBar />

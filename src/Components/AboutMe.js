@@ -14,13 +14,13 @@ const AboutMe = () => {
         <h1 className='text-white text-[50px] pt-[20px] font-bold text-center'>About <span className='text-black'>Me</span></h1>
         <h1 className='w-full px-10 md:px-48 lg:px-80 mt-[50px] text-white'>{AppText.aboutMeDescripion} </h1>
       </div>
-      <div className='flex flex-col md:flex-row mt-[-75px] md:px-32    '>
+      <div className='flex flex-col justify-between md:flex-row mt-[-10px] md:px-40    '>
         {
           aboutSection.map((item, index) => (
 
-            <div key={index} className="flex  relative w-full items-center justify-center flex-col m-2
-                group md:hover:bg-purple-600 rounded-lg py-2">
-              <img src={item.image} alt='item' className="w-[300px] rounded-lg h-[230px] object-cover" />
+            <div key={index} className="flex    relative md:w-[40%] items-center justify-center flex-col m-2
+                group md:hover:bg-purple-600 hover:shadow-lg duration-300 ease-in-out rounded-lg py-2">
+              <img src={item.image} alt='item' className="w-[300px] shadow-lg rounded-lg h-[230px] object-cover" />
               <h1 className='font-bold md:group-hover:text-white'>{item.title}</h1>
               <h1 className='text-[12px] md:group-hover:text-gray-200 text-gray-500 px-7'>{item.desc}</h1>
             </div>

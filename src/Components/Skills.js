@@ -11,13 +11,13 @@ const Skills = () => {
         <img src={skill} alt='skill' className="w-[70px] hover:animate-bounce " />
         <h1 className='text-[40px] font-bold'>{AppText.Skills}<span className='text-purple-600'>{AppText.Experties}</span></h1>
       </div>
-      <div className='flex flex-col md:flex-row  justify-evenly px-8 md:px-0 mt-8 '>
-        <div className='grid grid-cols-4 md:grid-cols-4 gap-8  items-center'>
+      <div className='flex flex-col md:flex-row   justify-evenly  mt-8 '>
+        <div className='grid animate-scrollRight  md:mr-20 grid-cols-4 md:grid-cols-4 gap-8  items-center'>
           {skillsList.map((item, index) => (
-            <div key={index} className='w-[60px] transition ease-in-out delay-100 hover:scale-125 bg-purple-50
+            <div key={index} className=' w-[40px] md:w-[60px] transition animate-pulse ease-in-out delay-100 hover:scale-125 bg-purple-200
                  p-3 rounded-full' >
               <img src={item.icon} alt='icon'
-                className="w-[60px]" />
+                className=" w-[60px]" />
             </div>
 
           ))}

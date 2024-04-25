@@ -25,20 +25,23 @@ function ContactUs() {
     };
 
     try {
-      const response = await fetch("https://my-portfolio-1f763-default-rtdb.firebaseio.com/UserData.json", options);
+      const response = await fetch("https://my-portfolio-server-7zjh.onrender.com/send-email", options);
+      console.log('response', response)
       if (response.ok) {
         toast.success("Message sent successfully");
       } else {
         toast.error("Error occurred while sending message");
       }
+
     } catch (error) {
       console.error('Error:', error);
       toast.error("Error occurred while sending message");
     } finally {
+      setEmail("");
+      setMessage("");
       setIsLoading(false); // Hide loader after the operation is complete
     }
   };
-
   return (
     <div id="contact" className='flex flex-col justify-center  font-times mt-5'>
       <div className='flex flex-row  justify-center '>

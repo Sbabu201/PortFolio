@@ -3,7 +3,7 @@ import homeImage from './homeImage.png'
 import book from './book.png'
 import laptop from './laptop.png'
 import skill from './skill.png'
-
+import chat from "./chat.jpg"
 import firebase from './firebase.png'
 import mysql from './mysql.png'
 import nodejs from './nodejs.png'
@@ -45,6 +45,6 @@ export {
     mysql,
     react,
     wave,
-    robo, tailwind, mongo, javascript, okcl, insta2
+    robo, tailwind, mongo, javascript, okcl, insta2, chat
 
 }
