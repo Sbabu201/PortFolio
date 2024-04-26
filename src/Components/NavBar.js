@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useActiveSection } from "../Shared/UseActiveSection";
 const NavBar = () => {
   const data = useActiveSection();
+  console.log('data === "home"', data === "home")
   const hashFragment = window.location.hash; // E.g., "#aboutme"
   const fragmentWithoutHash = hashFragment.substring(1);
   const navigate = useNavigate()
@@ -42,7 +43,7 @@ const NavBar = () => {
         transition: "all 0.5s ease",
       }}
     >
-      <a href="#home">
+      <p onClick={() => { navigate("/#home") }}>
         <img
           src={logo}
           alt="image"
@@ -51,32 +52,26 @@ const NavBar = () => {
           className="mt-3 ml-2 md:mt-4 mb-4 md:ml-12 w-20 md:w-32 h-20  object-cover filter invert"
           draggable={false}
         />
-      </a>
+      </p>
       <div>
         <ul className="hidden font-bold font-times md:flex">
-          <li onClick={() => { navigate("/#home") }} className="menuItem hover:scale-110 hover:z-50  transition-all duration-300 ease-in-out">
+          <li onClick={() => { navigate("/#home") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "home" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
             <p >Home</p>
-            {data === "home" && <p className="border-b-2 w-auto border-purple-600  animate-pulse duration-300 transition-opacity ease-linear   "></p>}
           </li>
-          <li onClick={() => { navigate("/#aboutme") }} className="menuItem hover:scale-110">
+          <li onClick={() => { navigate("/#aboutme") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "aboutme" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
             <p >About Me</p>
-            {data === "aboutme" && <p className="border-b-2 w-auto border-purple-600  animate-pulse duration-300 transition-opacity ease-linear   "></p>}
           </li>
-          <li onClick={() => { navigate("/#skills") }} className="menuItem hover:scale-110">
+          <li onClick={() => { navigate("/#skills") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "skills" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
             <p >Skills</p>
-            {data === "skills" && <p className="border-b-2 w-auto border-purple-600  animate-pulse duration-300 transition-opacity ease-linear   "></p>}
           </li>
-          <li onClick={() => { navigate("/#companies") }} className="menuItem hover:scale-110">
+          <li onClick={() => { navigate("/#companies") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "companies" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
             <p>Companies</p>
-            {data === "companies" && <p className="border-b-2 w-auto border-purple-600  animate-pulse duration-300 transition-opacity ease-linear   "></p>}
           </li>
-          <li onClick={() => { navigate("/#contact") }} className="menuItem hover:scale-110">
+          <li onClick={() => { navigate("/#contact") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "contact" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
             <p >Contact Us</p>
-            {data === "contact" && <p className={`border-b-2 w-auto border-purple-600  animate-pulse duration-300 transition-opacity ease-linear  `}></p>}
           </li>
-          <li onClick={() => { navigate("/mycreativity") }} className="menuItem hover:scale-110">
+          <li onClick={() => { navigate("/mycreativity") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${window.location.pathname === "/mycreativity" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
             <p >my Creativity</p>
-            {window.location.pathname === "/mycreativity" && <p className="border-b-2 w-auto border-purple-600  animate-pulse duration-300 transition-opacity ease-linear   "></p>}
           </li>
         </ul>
         {/* <img src={logo} className="sm:hidden w-[40px] h-[40px]" /> */}

@@ -135,22 +135,12 @@ export const portfolio = [
 ]
 
 export const CompanyImage = [
-    // {
-    //     id: 1,
-    //     imageUrl: cognizantLogo
-    // },
+
     {
         id: 1,
         imageUrl: okcl
     },
-    // {
-    //     id: 1,
-    //     imageUrl: aflacLogo
-    // },
-    // {
-    //     id: 1,
-    //     imageUrl: wiuLogo
-    // }
+
 ]
 
 export const socialNetwork = [
@@ -174,4 +164,293 @@ export const socialNetwork = [
         logo: facebook,
         url: 'https://www.facebook.com/soumya.babu.9634'
     },
+]
+
+export const MyCreations = [
+    {
+        id: 1,
+        title: 'Image Slider',
+        type: 'card',
+        desc: "image Slider to make a card beautiful",
+        imageUrl: "https://img.freepik.com/free-photo/online-message-blog-chat-communication-envelop-graphic-icon-concept_53876-139717.jpg?t=st=1708668334~exp=1708671934~hmac=650f6162992a5748907983d54bb51873a251d3cbb8c429dd014f4a0e01acfc19&w=1380",
+        website: "https://github.com/Sbabu201/Blog-app",
+        items: [
+            {
+                id: 1,
+                name: "circle Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 2,
+                name: "animated Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 3,
+                name: "skeleton Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 4,
+                name: "card Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 5,
+                name: "homepage Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 6,
+                name: "bublle Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+
+        ]
+    },
+    {
+        id: 2,
+        title: ' Loders',
+        type: 'card',
+        desc: "Loaders For your Website to Look More Professinal ",
+        imageUrl: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDNzbDU0czVsd2R1eWtzN3IyOGlqcGswaTFmZGFkaGUwc2EzcjRnbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTk9ZvMnbIiIew7IpW/giphy.gif",
+        website: "https://github.com/Sbabu201/Blog-app",
+        items: [
+            {
+                id: 1,
+                name: "circle Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 2,
+                name: "animated Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 3,
+                name: "skeleton Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 4,
+                name: "card Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 5,
+                name: "homepage Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 6,
+                name: "bublle Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+
+        ]
+    },
+    {
+        id: 3,
+        title: 'Sidebars',
+        type: 'card',
+        desc: "image Slider to make a card beautiful",
+        imageUrl: "https://img.freepik.com/free-photo/online-message-blog-chat-communication-envelop-graphic-icon-concept_53876-139717.jpg?t=st=1708668334~exp=1708671934~hmac=650f6162992a5748907983d54bb51873a251d3cbb8c429dd014f4a0e01acfc19&w=1380",
+        website: "https://github.com/Sbabu201/Blog-app",
+        items: [
+            {
+                id: 1,
+                name: "circle Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 2,
+                name: "animated Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 3,
+                name: "skeleton Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 4,
+                name: "card Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 5,
+                name: "homepage Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 6,
+                name: "bublle Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+
+        ]
+    },
+    {
+        id: 4,
+        title: 'Navbars',
+        type: 'card',
+        desc: "image Slider to make a card beautiful",
+        imageUrl: "https://img.freepik.com/free-photo/online-message-blog-chat-communication-envelop-graphic-icon-concept_53876-139717.jpg?t=st=1708668334~exp=1708671934~hmac=650f6162992a5748907983d54bb51873a251d3cbb8c429dd014f4a0e01acfc19&w=1380",
+        website: "https://github.com/Sbabu201/Blog-app",
+        items: [
+            {
+                id: 1,
+                name: "circle Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 2,
+                name: "animated Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 3,
+                name: "skeleton Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 4,
+                name: "card Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 5,
+                name: "homepage Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 6,
+                name: "bublle Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+
+        ]
+    },
+    {
+        id: 5,
+        title: 'Drawers',
+        type: 'card',
+        desc: "image Slider to make a card beautiful",
+        imageUrl: "https://img.freepik.com/free-photo/online-message-blog-chat-communication-envelop-graphic-icon-concept_53876-139717.jpg?t=st=1708668334~exp=1708671934~hmac=650f6162992a5748907983d54bb51873a251d3cbb8c429dd014f4a0e01acfc19&w=1380",
+        website: "https://github.com/Sbabu201/Blog-app",
+        items: [
+            {
+                id: 1,
+                name: "circle Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 2,
+                name: "animated Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 3,
+                name: "skeleton Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 4,
+                name: "card Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 5,
+                name: "homepage Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 6,
+                name: "bublle Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+
+        ]
+    },
+    {
+        id: 6,
+        title: 'Card Components',
+        type: 'card',
+        desc: "image Slider to make a card beautiful",
+        imageUrl: "https://img.freepik.com/free-photo/online-message-blog-chat-communication-envelop-graphic-icon-concept_53876-139717.jpg?t=st=1708668334~exp=1708671934~hmac=650f6162992a5748907983d54bb51873a251d3cbb8c429dd014f4a0e01acfc19&w=1380",
+        website: "https://github.com/Sbabu201/Blog-app",
+        items: [
+            {
+                id: 1,
+                name: "circle Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 2,
+                name: "animated Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 3,
+                name: "skeleton Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 4,
+                name: "card Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 5,
+                name: "homepage Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+            {
+                id: 6,
+                name: "bublle Loader",
+                code: "hello coders",
+                demo: "demo"
+            },
+
+        ]
+    },
+
+
+
+
 ]

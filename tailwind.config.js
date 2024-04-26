@@ -15,7 +15,9 @@ module.exports = {
         },
       },
       animation: {
-        scrollRight: 'scrollRight 10s linear infinite ', // Adjust duration for desired speed
+        scrollRight: 'scrollRight 10s linear infinite ',
+
+        // Adjust duration for desired speed
       },
     },
   },
