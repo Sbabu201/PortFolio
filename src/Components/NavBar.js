@@ -2,7 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./NavBar.css";
 import logo from "./../assets/logo4.png";
 import SideBar from "./SideBar";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useActiveSection } from "../Shared/UseActiveSection";
 const NavBar = () => {
+  const data = useActiveSection();
+  const hashFragment = window.location.hash; // E.g., "#aboutme"
+  const fragmentWithoutHash = hashFragment.substring(1);
+  const navigate = useNavigate()
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -48,20 +54,29 @@ const NavBar = () => {
       </a>
       <div>
         <ul className="hidden font-bold font-times md:flex">
-          <li className="menuItem hover:scale-110 hover:z-50 transition-all duration-300 ease-in-out">
-            <a href="/#home">Home</a>
+          <li onClick={() => { navigate("/#home") }} className="menuItem hover:scale-110 hover:z-50  transition-all duration-300 ease-in-out">
+            <p >Home</p>
+            {data === "home" && <p className="border-b-2 w-auto border-purple-600  animate-pulse duration-300 transition-opacity ease-linear   "></p>}
           </li>
-          <li className="menuItem hover:scale-110">
-            <a href="/#aboutme">About Me</a>
+          <li onClick={() => { navigate("/#aboutme") }} className="menuItem hover:scale-110">
+            <p >About Me</p>
+            {data === "aboutme" && <p className="border-b-2 w-auto border-purple-600  animate-pulse duration-300 transition-opacity ease-linear   "></p>}
           </li>
-          <li className="menuItem hover:scale-110">
-            <a href="/#skills">Skills</a>
+          <li onClick={() => { navigate("/#skills") }} className="menuItem hover:scale-110">
+            <p >Skills</p>
+            {data === "skills" && <p className="border-b-2 w-auto border-purple-600  animate-pulse duration-300 transition-opacity ease-linear   "></p>}
           </li>
-          <li className="menuItem hover:scale-110">
-            <a href="/#companies">Companies</a>
+          <li onClick={() => { navigate("/#companies") }} className="menuItem hover:scale-110">
+            <p>Companies</p>
+            {data === "companies" && <p className="border-b-2 w-auto border-purple-600  animate-pulse duration-300 transition-opacity ease-linear   "></p>}
           </li>
-          <li className="menuItem hover:scale-110">
-            <a href="/#contact">Contact Us</a>
+          <li onClick={() => { navigate("/#contact") }} className="menuItem hover:scale-110">
+            <p >Contact Us</p>
+            {data === "contact" && <p className={`border-b-2 w-auto border-purple-600  animate-pulse duration-300 transition-opacity ease-linear  `}></p>}
+          </li>
+          <li onClick={() => { navigate("/mycreativity") }} className="menuItem hover:scale-110">
+            <p >my Creativity</p>
+            {window.location.pathname === "/mycreativity" && <p className="border-b-2 w-auto border-purple-600  animate-pulse duration-300 transition-opacity ease-linear   "></p>}
           </li>
         </ul>
         {/* <img src={logo} className="sm:hidden w-[40px] h-[40px]" /> */}
@@ -74,25 +89,7 @@ const NavBar = () => {
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
           }
-          {/* 
-          {toggle ?
-            <ul className="md:hidden absolute flex mt-8 flex-col bg-gray-200 p-2 rounded-sm">
-              <li className="menuItem p-3 hover:scale-110 hover:z-50 transition-all duration-300 ease-in-out">
-                <a href="/#home">Home</a>
-              </li>
-              <li className="menuItem  p-3 hover:scale-110">
-                <a href="/#aboutme">About Me</a>
-              </li>
-              <li className="menuItem p-3 hover:scale-110">
-                <a href="/#skills">Skills</a>
-              </li>
-              <li className="menuItem p-3 hover:scale-110">
-                <a href="/#companies">Companies</a>
-              </li>
-              <li className="menuItem p-3 hover:scale-110">
-                <a href="/#contact">Contact Us</a>
-              </li>
-            </ul> : null} */}
+
 
           {<SideBar open={toggle} setOpen={setOpen} />}
         </div>

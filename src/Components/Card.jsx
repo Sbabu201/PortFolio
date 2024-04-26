@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const Card = ({ imageSrc, title, description, link, detailedDescription }) => {
-    console.log('detailedDescription', detailedDescription)
     const [isFlipped, setIsFlipped] = useState(false);
     const [showDetailedDescription, setShowDetailedDescription] = useState(false);
 

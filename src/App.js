@@ -1,35 +1,20 @@
 
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { NavBar, Home, Portfolio } from './Components';
-import AboutMe from './Components/AboutMe';
-import Companies from './Components/Companies';
-import ContactUs from './Components/ContactUs';
-import Footer from './Components/Footer';
-import Skills from './Components/Skills';
-import { Toaster } from "react-hot-toast"
+import MyCreativity from './pages/MyCreativity';
+import HomePage from './pages/HomePage';
+import { NavBar } from './Components';
+
 
 function App() {
   return (
-    <div className="App custom-scrollbar overflow-y-auto  ">
-      <Toaster />
-      {/* NavBar */}
+    <>
       <NavBar />
-      {/* Home */}
-      <Home />
-      {/* About Me */}
-      <AboutMe />
-      {/* Skills */}
-      <Skills />
-      {/* Portfolio */}
-      <Portfolio />
-
-      {/* Companies */}
-      <Companies />
-      {/* Contact Us */}
-      <ContactUs />
-
-      <Footer />
-    </div>
+      <Routes>
+        <Route exact path='/' element={<HomePage />} />
+        <Route exact path='/mycreativity' element={<MyCreativity />} />
+      </Routes>
+    </>
   );
 }
 
