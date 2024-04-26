@@ -656,8 +656,8 @@ export const MyCreations = [
         ]
     },
     {
-        id: 6,
-        title: 'Card Components',
+        id: 7,
+        title: 'FORM COMPONENT',
         type: 'card',
         desc: "image Slider to make a card beautiful",
         imageUrl: "https://img.freepik.com/free-photo/online-message-blog-chat-communication-envelop-graphic-icon-concept_53876-139717.jpg?t=st=1708668334~exp=1708671934~hmac=650f6162992a5748907983d54bb51873a251d3cbb8c429dd014f4a0e01acfc19&w=1380",
