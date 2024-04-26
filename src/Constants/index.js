@@ -666,19 +666,129 @@ export const MyCreations = [
             {
                 id: 1,
                 name: "circle Loader",
-                code: "hello coders",
+                code: `<form class="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <div class="flex mb-4">
+                  <div class="w-1/2 mr-2">
+                    <label class="block text-gray-700 font-bold mb-2" for="firstName">
+                      First Name
+                    </label>
+                    <input
+                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      type="text"
+                      id="firstName"
+                      placeholder="First Name"
+                    />
+                  </div>
+                  <div class="w-1/2 ml-2">
+                    <label class="block text-gray-700 font-bold mb-2" for="lastName">
+                      Last Name
+                    </label>
+                    <input
+                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      type="text"
+                      id="lastName"
+                      placeholder="Last Name"
+                    />
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label class="block text-gray-700 font-bold mb-2" for="email">
+                    Email
+                  </label>
+                  <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    type="email"
+                    id="email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="mb-4">
+                  <button
+                    class="w-full bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition duration-300"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+              `,
                 demo: "demo"
             },
             {
                 id: 2,
                 name: "animated Loader",
-                code: "hello coders",
+                code: `<form class="max-w-md mx-auto p-8 rounded-lg shadow-lg bg-white relative">
+                <div class="absolute inset-0 rounded-lg shadow-inner"></div>
+                <div class="relative z-10 mb-6">
+                  <label class="block text-gray-700 font-bold mb-2" for="name">
+                    Name
+                  </label>
+                  <input
+                    class="w-full px-3 py-2 rounded-md shadow focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                  />
+                </div>
+                <div class="relative z-10 mb-6">
+                  <label class="block text-gray-700 font-bold mb-2" for="email">
+                    Email
+                  </label>
+                  <input
+                    class="w-full px-3 py-2 rounded-md shadow focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div class="relative z-10">
+                  <button
+                    class="w-full px-4 py-2 rounded-md bg-indigo-600 text-white font-bold hover:bg-indigo-700 transition duration-300 shadow"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+              `,
                 demo: "demo"
             },
             {
                 id: 3,
                 name: "skeleton Loader",
-                code: "hello coders",
+                code: `<form class="max-w-md mx-auto p-8 rounded-lg shadow-lg bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+                <div class="mb-6">
+                  <label class="block text-white font-bold mb-2" for="name">
+                    Name
+                  </label>
+                  <input
+                    class="w-full px-3 py-2 rounded-md bg-white bg-opacity-25 text-white placeholder-white focus:outline-none focus:bg-opacity-50"
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                  />
+                </div>
+                <div class="mb-6">
+                  <label class="block text-white font-bold mb-2" for="email">
+                    Email
+                  </label>
+                  <input
+                    class="w-full px-3 py-2 rounded-md bg-white bg-opacity-25 text-white placeholder-white focus:outline-none focus:bg-opacity-50"
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div class="mb-6">
+                  <button
+                    class="w-full px-4 py-2 rounded-md bg-white text-purple-600 font-bold hover:bg-opacity-90 transition duration-300"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+              `,
                 demo: "demo"
             },
             {
