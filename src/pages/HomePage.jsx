@@ -31,7 +31,7 @@ function HomePage() {
 
 
     return (
-        <div className="App custom-scrollbar scroll-smooth overflow-y-auto  ">
+        <div className="App custom-scrollbar overflow-x-hidden scroll-smooth overflow-y-auto  ">
             <Toaster />
 
             <Home />

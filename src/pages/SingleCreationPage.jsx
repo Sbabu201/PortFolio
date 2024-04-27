@@ -29,11 +29,12 @@ const SingleCreationPage = () => {
             {items.map((item) => (
                 <div className='flex flex-col gap-4 ' key={item.id}>
                     {item.items.map((value, index) => (
-                        <div key={index} className='flex md:flex-row flex-col gap-4 w-full px-10'>
-                            <div className='w-full md:w-[40%] flex justify-center items-center'>
+                        <div key={index} className='flex md:flex-row border-b-2 border-purple-400 flex-col gap-4 w-full px-10'>
+                            <div className='w-full md:w-[40%]  flex justify-evenly   items-center'>
+                                <span>live demo</span>
                                 {parse(value?.code)}
                             </div>
-                            <div className='w-full md:w-[60%]' style={{ overflowX: 'auto' }}>
+                            <div className='w-full md:w-[60%] view' style={{ overflowX: 'auto' }}>
                                 <button className={` text-sm font-times px-8 py-2 ${copiedIndex === index ? "from-purple-200 to-purple-600 bg-gradient-to-r text-white" : " bg-purple-900"}  `}
                                     onClick={() => copyToClipboard(value?.code, index)}
                                     style={{
