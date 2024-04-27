@@ -6,7 +6,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useActiveSection } from "../Shared/UseActiveSection";
 const NavBar = () => {
   const data = useActiveSection();
-  console.log('data === "home"', data === "home")
   const hashFragment = window.location.hash; // E.g., "#aboutme"
   const fragmentWithoutHash = hashFragment.substring(1);
   const navigate = useNavigate()
