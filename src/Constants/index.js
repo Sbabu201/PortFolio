@@ -228,7 +228,8 @@ export const MyCreations = [
                 code: `<div className="flex justify-center items-center w-20 h-20">
                 <div className=" border-t-4 border-yellow-600 w-16 h-16 duration-300 ease-in-out  rounded-full animate-spin"></div>
               </div>`,
-                demo: "demo"
+                demo: "demo",
+                "description": "loders with proper tailwind css used"
             },
             {
                 id: 2,
@@ -241,7 +242,8 @@ export const MyCreations = [
                 <span className='w-4 h-4 animate-ping rounded-full duration-300 ease-in-out bg-gradient-to-r from-red-400 to-red-900'>
                 </span>
               </div>`,
-                demo: "demo"
+                demo: "demo",
+                "description": "loders with proper tailwind css used"
             },
             {
                 id: 3,
@@ -250,7 +252,8 @@ export const MyCreations = [
                 <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
               </div>
               `,
-                demo: "demo"
+                demo: "demo",
+                "description": "loders with proper tailwind css used"
             },
             {
                 id: 4,
@@ -259,7 +262,8 @@ export const MyCreations = [
                 <div class="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
               </div>
               `,
-                demo: "demo"
+                demo: "demo",
+                "description": "loders with proper tailwind css used"
             },
             {
                 id: 5,
@@ -268,7 +272,8 @@ export const MyCreations = [
                 <div class="w-8 h-8 bg-blue-500 rounded-full animate-pulse"></div>
               </div>
               `,
-                demo: "demo"
+                demo: "demo",
+                "description": "loders with proper tailwind css used"
             },
             {
                 id: 6,
@@ -279,7 +284,8 @@ export const MyCreations = [
                 <div class="w-3 h-3 bg-blue-500 rounded-full animate-bounce animation-delay-400"></div>
               </div>
               `,
-                demo: "demo"
+                demo: "demo",
+                "description": "loders with proper tailwind css used"
             },
             {
                 id: 6,
@@ -288,7 +294,8 @@ export const MyCreations = [
                 <div class="animate-spin h-8 w-8 border-4 border-blue-500 border-opacity-50 rounded-full border-t-transparent"></div>
               </div>
               `,
-                demo: "demo"
+                demo: "demo",
+                "description": "loders with proper tailwind css used"
             },
 
         ]
