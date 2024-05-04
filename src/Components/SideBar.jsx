@@ -5,7 +5,7 @@ import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognitio
 import toast from 'react-hot-toast';
 
 
-export default function SideBar({ open, setOpen }) {
+export default function SideBar({ open, setOpen, setClose }) {
     const { transcript, browserSupportsSpeechRecognition, listening, resetTranscript } = useSpeechRecognition();
 
     const navigate = useNavigate();
@@ -55,7 +55,7 @@ export default function SideBar({ open, setOpen }) {
     const hashFragment = window.location.hash; // E.g., "#aboutme"
     const fragmentWithoutHash = hashFragment.substring(1);
     const toggleDrawer = () => {
-        setOpen()
+        setClose()
     }
 
     return (
@@ -66,7 +66,7 @@ export default function SideBar({ open, setOpen }) {
                 onClose={toggleDrawer}
             >
                 <ul className="flex flex-col items-center justify-center  gap-2  font-bold font-times md:hidden">
-                    <li onClick={() => { toast.success("say the section name like go to home "); SpeechRecognition.startListening({ continuous: true }) }} className={` w-[90%] mx-auto  py-3  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${listening ? "from-purple-200 to-purple-600 text-white " : ""}`}>
+                    <li onClick={() => { toast.success("say the section name like go to home "); SpeechRecognition.startListening({ continuous: true }); toggleDrawer() }} className={` w-[90%] mx-auto  py-3  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${listening ? "from-purple-200 to-purple-600 text-white " : ""}`}>
                         <p >try Speach recognition</p>
                     </li>
                     <li onClick={() => { navigate("/#home"); toggleDrawer() }} className={` w-[90%] mx-auto  py-3  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${fragmentWithoutHash === "home" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>

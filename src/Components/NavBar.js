@@ -17,9 +17,11 @@ const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const setOpen = () => {
-    setToggle(state => !state)
+    setToggle(true)
   }
-
+  const setClose = () => {
+    setToggle(false)
+  }
   useEffect(() => {
     if (transcript) {
       console.log('transcript', transcript)
@@ -128,13 +130,13 @@ const NavBar = () => {
             viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"
             className="w-6 h-6 cursor-pointer md:hidden">
             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
-          </svg> : <svg onClick={() => setToggle(!toggle)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 cursor-pointer md:hidden h-6">
+          </svg> : <svg onClick={() => setToggle(true)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 cursor-pointer md:hidden h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
           }
 
 
-          {<SideBar open={toggle} setOpen={setOpen} />}
+          {<SideBar open={toggle} setOpen={setOpen} setClose={setClose} />}
         </div>
         {/* <ul className={!toggle?'hidden':'flex'}>
                 LOGO
