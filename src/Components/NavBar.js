@@ -4,7 +4,11 @@ import logo from "./../assets/logo4.png";
 import SideBar from "./SideBar";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useActiveSection } from "../Shared/UseActiveSection";
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import toast from "react-hot-toast";
 const NavBar = () => {
+  const { transcript, browserSupportsSpeechRecognition, resetTranscript } = useSpeechRecognition();
+  console.log(transcript)
   const data = useActiveSection();
   const hashFragment = window.location.hash; // E.g., "#aboutme"
   const fragmentWithoutHash = hashFragment.substring(1);
@@ -15,6 +19,42 @@ const NavBar = () => {
   const setOpen = () => {
     setToggle(state => !state)
   }
+
+  useEffect(() => {
+    if (transcript) {
+      console.log('transcript', transcript)
+      if (transcript.includes("Go to my creativity") || transcript.includes("my creativity")) {
+        resetTranscript();
+        navigate("/mycreativity")
+      }
+      if (transcript.includes("Go to home") || transcript.includes("home")) {
+        resetTranscript();
+        navigate("/#home")
+      }
+      if (transcript.includes("Go to about") || transcript.includes("Go to about me") || transcript.includes("about me") || transcript.includes("about")) {
+        resetTranscript();
+        navigate("/#aboutme")
+      }
+      if (transcript.includes("Go to skill") || transcript.includes("Go to skills") || transcript.includes("skills") || transcript.includes("skill")) {
+        resetTranscript();
+        navigate("/#skills")
+      }
+      if (transcript.includes("Go to companies") || transcript.includes("companies") || transcript.includes("Go to company")) {
+        resetTranscript();
+        navigate("/#companies")
+      }
+      if (transcript.includes("Go to contact") || transcript.includes("Go to contact me") || transcript.includes("contact") || transcript.includes("contact me")) {
+        resetTranscript();
+        navigate("/#contact")
+      }
+      if (transcript.includes("Thank you" || "stop speech")) {
+
+        SpeechRecognition.stopListening()
+        resetTranscript();
+      }
+    }
+  }, [transcript, resetTranscript])
+
   useEffect(() => {
     const handleScroll = () => {
 
@@ -34,7 +74,9 @@ const NavBar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
+  if (!browserSupportsSpeechRecognition) {
+    return <span>Browser doesn't support speech recognition.</span>;
+  }
   return (
     <div className={`not-selectable h-20 sc w-full top-0 left-0 right-0 bg-white flex justify-between items-center p-1  z-50  ${scrolled ? "fixed shadow-md" : ""
       }`}
@@ -52,24 +94,30 @@ const NavBar = () => {
           draggable={false}
         />
       </p>
+
       <div>
         <ul className="hidden font-bold font-times md:flex">
-          <li onClick={() => { navigate("/#home") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "home" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
+
+
+          <li onClick={() => { toast.success("say the section name like go to home "); SpeechRecognition.startListening({ continuous: true }) }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600 hover:-translate-y-1  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "home" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
+            <p >try Speach recognition</p>
+          </li>
+          <li onClick={() => { navigate("/#home") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600 hover:-translate-y-1  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "home" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
             <p >Home</p>
           </li>
-          <li onClick={() => { navigate("/#aboutme") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "aboutme" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
+          <li onClick={() => { navigate("/#aboutme") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600 hover:-translate-y-1  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "aboutme" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
             <p >About Me</p>
           </li>
-          <li onClick={() => { navigate("/#skills") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "skills" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
+          <li onClick={() => { navigate("/#skills") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600 hover:-translate-y-1  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "skills" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
             <p >Skills</p>
           </li>
-          <li onClick={() => { navigate("/#companies") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "companies" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
+          <li onClick={() => { navigate("/#companies") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600 hover:-translate-y-1  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "companies" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
             <p>Companies</p>
           </li>
-          <li onClick={() => { navigate("/#contact") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "contact" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
+          <li onClick={() => { navigate("/#contact") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600 hover:-translate-y-1  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "contact" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
             <p >Contact Us</p>
           </li>
-          <li onClick={() => { navigate("/mycreativity") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${window.location.pathname === "/mycreativity" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
+          <li onClick={() => { navigate("/mycreativity") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600 hover:-translate-y-1  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${window.location.pathname === "/mycreativity" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
             <p >my Creativity</p>
           </li>
         </ul>
