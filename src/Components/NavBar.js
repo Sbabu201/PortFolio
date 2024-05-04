@@ -7,7 +7,7 @@ import { useActiveSection } from "../Shared/UseActiveSection";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import toast from "react-hot-toast";
 const NavBar = () => {
-  const { transcript, browserSupportsSpeechRecognition, resetTranscript } = useSpeechRecognition();
+  const { transcript, browserSupportsSpeechRecognition, resetTranscript, listening } = useSpeechRecognition();
   console.log(transcript)
   const data = useActiveSection();
   const hashFragment = window.location.hash; // E.g., "#aboutme"
@@ -50,6 +50,7 @@ const NavBar = () => {
       if (transcript.includes("Thank you" || "stop speech")) {
 
         SpeechRecognition.stopListening()
+        toast.success("speech recognisation turned off ...")
         resetTranscript();
       }
     }
@@ -99,7 +100,7 @@ const NavBar = () => {
         <ul className="hidden font-bold font-times md:flex">
 
 
-          <li onClick={() => { toast.success("say the section name like go to home "); SpeechRecognition.startListening({ continuous: true }) }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600 hover:-translate-y-1  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "home" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
+          <li onClick={() => { toast.success("say the section name like go to home "); SpeechRecognition.startListening({ continuous: true }) }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600 hover:-translate-y-1  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${listening ? "from-purple-200 to-purple-600 text-white " : ""}`}>
             <p >try Speach recognition</p>
           </li>
           <li onClick={() => { navigate("/#home") }} className={`menuItem  py-1  bg-gradient-to-r hover:from-purple-200 hover:to-purple-600 hover:-translate-y-1  px-6 rounded-md hover:animate-pulse hover:text-white transition-all duration-300 ease-in-out ${data === "home" && window.location.pathname === "/" ? "from-purple-200 to-purple-600 text-white " : ""}`}>
