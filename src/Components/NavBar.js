@@ -10,6 +10,7 @@ const NavBar = () => {
   const { transcript, browserSupportsSpeechRecognition, resetTranscript, listening } = useSpeechRecognition();
   console.log(transcript)
   const data = useActiveSection();
+  console.log('data', data)
   const hashFragment = window.location.hash; // E.g., "#aboutme"
   const fragmentWithoutHash = hashFragment.substring(1);
   const navigate = useNavigate()
