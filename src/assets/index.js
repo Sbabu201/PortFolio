@@ -10,7 +10,7 @@ import nodejs from './nodejs.png'
 import tailwind from "./tailwind.png"
 import mongo from "./mongo.png"
 import javascript from "./javascript.png"
-
+import laerning from "./learning.png"
 import android from './android.png'
 import react from './react.png'
 import wave from './wave.svg'
@@ -44,7 +44,7 @@ export {
     firebase,
     mysql,
     react,
-    wave,
+    wave,laerning,
     robo, tailwind, mongo, javascript, okcl, insta2, chat
 
 }

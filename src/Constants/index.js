@@ -2,9 +2,8 @@ import {
     android,
     facebook, linkdin, mysql,
     nodejs,
-    react, youtube, tailwind, mongo, javascript, okcl, insta2, chat
+    react, youtube, tailwind, mongo, javascript, okcl, insta2, chat ,laerning
 } from "../assets"
-
 export const AppText = {
     hello: 'Hello,',
     Iam: 'I am ',
@@ -128,6 +127,15 @@ export const portfolio = [
         imageUrl: chat,
         website: "https://chat-app-client-ebon.vercel.app/",
         detailedDescription: "I developed a feature-rich chat application using the MERN stack, Socket.IO, Redux Toolkit, and Tailwind CSS. This Instagram-like chat app supports real-time messaging, group chats, and user presence indicators. With MongoDB for data storage and Node.js with Express.js for the backend, the app ensures scalability and robust performance. On the frontend, React with Redux Toolkit manages state efficiently, providing a seamless user experience. Tailwind CSS enables rapid UI development, ensuring a modern and responsive design. The app's intuitive interface, coupled with Socket.IO for real-time communication, delivers an engaging user experience akin to popular social media platforms."
+    },
+    {
+        id: 4,
+        title: 'E-Learning Platform ',
+        type: 'website',
+        desc: "E-laerning Platform App Build using React and Nodejs and   where you can Learn , get certified  in  the app  ",
+        imageUrl: laerning,
+        website: "https://e-learning-platform-wheat.vercel.app/",
+        detailedDescription: "I developed a feature-rich eLearning platform using the MERN stack (MongoDB, Express, React, Node.js) and styled with Tailwind CSS. The platform allows users to enroll in courses, watch video lectures, take quizzes, and earn certifications. Administrators can easily manage courses and content. The use of MERN ensures dynamic functionality, while Tailwind CSS provides a modern, responsive design."
     },
 
 
